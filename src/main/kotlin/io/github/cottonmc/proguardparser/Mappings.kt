@@ -14,10 +14,15 @@ import arrow.optics.optics
 }
 
 @optics data class ClassMapping(val from: String, val to: String, val fields: List<FieldMapping>, val methods: List<MethodMapping>) {
-    fun findNameForMethod(oldName: String, parameters: List<String>? = null): String? =
+    fun findMethod(oldName: String, parameters: List<String>? = null): MethodMapping? =
         methods.find {
             it.from == oldName && (parameters == null || it.parameters == parameters)
-        }?.to
+        }
+
+    fun findField(oldName: String, type: String? = null): FieldMapping? =
+        fields.find {
+            it.from == oldName && (type == null || it.type == type)
+        }
 
     companion object
 }

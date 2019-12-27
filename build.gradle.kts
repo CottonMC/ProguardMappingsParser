@@ -10,7 +10,7 @@ group = "io.github.cottonmc"
 version = "1.0.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 if (rootProject.file("private.gradle").exists()) {
@@ -23,8 +23,14 @@ apply(from = rootProject.file("artifactory.gradle"))
 dependencies {
     api(kotlin("stdlib-jdk8"))
     api("io.arrow-kt:arrow-optics:0.10.4")
+    testImplementation("io.arrow-kt:arrow-fx:0.10.4")
     kapt("io.arrow-kt:arrow-meta:0.10.4")
-    testCompile("junit", "junit", "4.12") // TODO: Add tests
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
+    testImplementation("io.strikt:strikt-core:0.23.2")
+    testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.9")
+    testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.9")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
 }
 
 configure<JavaPluginConvention> {
@@ -51,7 +57,12 @@ tasks {
     compileKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
+
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
+    }
+
+    test {
+        useJUnitPlatform()
     }
 }

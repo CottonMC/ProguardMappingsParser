@@ -1,0 +1,157 @@
+juuxel.terrestrialvacation.TerrestrialVacation -> juuxel.terrestrialvacation.TerrestrialVacation:
+    java.util.List _biomes -> tileState
+    juuxel.terrestrialvacation.TerrestrialVacation INSTANCE -> tile
+    java.util.List getBiomes$TerrestrialVacation() -> tileState
+    net.minecraft.util.Identifier id(java.lang.String) -> tileState
+    void init() -> init
+    boolean isValidBaseBiomeId(net.minecraft.util.Identifier) -> tileState
+    boolean isTerraformerBiome(net.minecraft.util.Identifier) -> tile
+    boolean isOtherBiome(net.minecraft.util.Identifier) -> level
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+    java.util.List access$get_biomes$p(juuxel.terrestrialvacation.TerrestrialVacation) -> tileState
+juuxel.terrestrialvacation.TerrestrialVacation$init$$inlined$visit$1 -> juuxel.terrestrialvacation.Grate:
+    void <init>() -> <init>
+    void onEntryAdded(int,net.minecraft.util.Identifier,java.lang.Object) -> onEntryAdded
+juuxel.terrestrialvacation.biome.AddBiomesLayer -> juuxel.terrestrialvacation.pawn.Grate:
+    juuxel.terrestrialvacation.biome.AddBiomesLayer INSTANCE -> level
+    int sample(net.minecraft.world.biome.layer.util.LayerRandomnessSource,int) -> sample
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.biome.AddVariantsLayer -> juuxel.terrestrialvacation.pawn.ReForgetEP:
+    juuxel.terrestrialvacation.biome.AddVariantsLayer INSTANCE -> menu
+    int sample(net.minecraft.world.biome.layer.util.LayerRandomnessSource,int) -> sample
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.biome.AddVolcanicIslandsLayer -> juuxel.terrestrialvacation.pawn.Wander:
+    int DEEP_OCEAN_ID -> transformer
+    int VOLCANIC_SHORE_ID -> youJustLostTheGame
+    juuxel.terrestrialvacation.biome.AddVolcanicIslandsLayer INSTANCE -> value
+    int sample(net.minecraft.world.biome.layer.util.LayerRandomnessSource,int) -> sample
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.biome.Climates -> juuxel.terrestrialvacation.pawn.Inj2:
+    net.minecraft.util.Identifier CALDERA_RIDGE_ID -> container
+    net.minecraft.util.Identifier RAINBOW_RAINFOREST_ID -> keybindComponent
+    java.util.EnumMap pickers -> minecraft
+    juuxel.terrestrialvacation.biome.Climates INSTANCE -> a
+    void add(net.minecraft.world.biome.Biome,net.fabricmc.fabric.api.biomes.v1.OverworldClimate,double) -> tileState
+    juuxel.terrestrialvacation.biome.fabric.WeightedBiomePicker getPicker(net.fabricmc.fabric.api.biomes.v1.OverworldClimate) -> tileState
+    void checkSpecialCase(net.minecraft.util.Identifier,net.minecraft.world.biome.Biome) -> tileState
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.biome.ExpandVolcanicIslandsLayer -> juuxel.terrestrialvacation.pawn.Bang:
+    int VOLCANIC_SHORE_ID -> youJustLostTheGame
+    juuxel.terrestrialvacation.biome.ExpandVolcanicIslandsLayer INSTANCE -> b
+    int sample(net.minecraft.world.biome.layer.util.LayerRandomnessSource,int,int,int,int,int) -> sample
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.biome.TerrestrialBiomeLayers -> juuxel.terrestrialvacation.pawn.ReCocartesian:
+    juuxel.terrestrialvacation.biome.TerrestrialBiomeLayers INSTANCE -> c
+    net.minecraft.world.biome.layer.util.LayerFactory create(java.util.function.LongFunction) -> tileState
+    net.minecraft.world.biome.source.BiomeLayerSampler build(long) -> tileState
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.biome.TerrestrialBiomeLayers$build$1 -> juuxel.terrestrialvacation.pawn.Algebra:
+    long $seed -> d
+    java.lang.Object apply(long) -> apply
+    void <init>(long) -> <init>
+juuxel.terrestrialvacation.biome.TerrestrialBiomeSource -> juuxel.terrestrialvacation.pawn.Optic:
+    net.minecraft.world.biome.source.BiomeLayerSampler biomeSampler -> e
+    net.minecraft.world.biome.Biome getBiomeForNoiseGen(int,int,int) -> getBiomeForNoiseGen
+    void <init>(java.util.List,net.minecraft.world.biome.source.VanillaLayeredBiomeSourceConfig) -> <init>
+juuxel.terrestrialvacation.biome.fabric.ContinentalBiomeEntry -> juuxel.terrestrialvacation.pawn.pawn.Grate:
+    net.minecraft.world.biome.Biome biome -> f
+    double upperWeightBound -> g
+    void <init>(net.minecraft.world.biome.Biome,double,double) -> <init>
+    net.minecraft.world.biome.Biome getBiome() -> tile
+    double getUpperWeightBound() -> level
+juuxel.terrestrialvacation.biome.fabric.WeightedBiomePicker -> juuxel.terrestrialvacation.pawn.pawn.ReForgetEP:
+    double currentTotal -> h
+    java.util.List entries -> i
+    void <init>() -> <init>
+    void addBiome(net.minecraft.world.biome.Biome,double) -> tileState
+    net.minecraft.world.biome.Biome pickRandom(net.minecraft.world.biome.layer.util.LayerRandomnessSource) -> tileState
+juuxel.terrestrialvacation.block.BiomeRiftPortalBlock -> juuxel.terrestrialvacation.bishop.Grate:
+    net.minecraft.util.ActionResult onUse(net.minecraft.block.BlockState,net.minecraft.world.World,net.minecraft.util.math.BlockPos,net.minecraft.entity.player.PlayerEntity,net.minecraft.util.Hand,net.minecraft.util.hit.BlockHitResult) -> onUse
+    void randomDisplayTick(net.minecraft.block.BlockState,net.minecraft.world.World,net.minecraft.util.math.BlockPos,java.util.Random) -> randomDisplayTick
+    void <init>(net.minecraft.block.Block$Settings) -> <init>
+juuxel.terrestrialvacation.config.Config -> juuxel.terrestrialvacation.knight.Grate:
+    boolean disableOverworldGeneration -> j
+    java.util.List blacklistedBaseBiomes -> k
+    kotlin.Lazy INSTANCE$delegate -> l
+    juuxel.terrestrialvacation.config.Config$Companion Companion -> m
+    com.google.gson.JsonObject toJson() -> menu
+    boolean isOverworldGenerationDisabled() -> transformer
+    java.util.List getBlacklistedBaseBiomes() -> youJustLostTheGame
+    void <init>(boolean,java.util.List) -> <init>
+    void <init>(boolean,java.util.List,int) -> <init>
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+    kotlin.Lazy access$getINSTANCE$cp() -> value
+    java.lang.String toString() -> toString
+    int hashCode() -> hashCode
+    boolean equals(java.lang.Object) -> equals
+    juuxel.terrestrialvacation.config.Config get() -> container
+juuxel.terrestrialvacation.config.Config$Companion -> juuxel.terrestrialvacation.knight.ReForgetEP:
+    kotlin.reflect.KProperty[] $$delegatedProperties -> n
+    void <clinit>() -> <clinit>
+    juuxel.terrestrialvacation.config.Config get() -> container
+    juuxel.terrestrialvacation.config.Config fromJson(com.google.gson.JsonObject) -> tileState
+    void <init>() -> <init>
+    void <init>(byte) -> <init>
+juuxel.terrestrialvacation.config.Config$Companion$INSTANCE$2 -> juuxel.terrestrialvacation.knight.Wander:
+    juuxel.terrestrialvacation.config.Config$Companion$INSTANCE$2 INSTANCE -> o
+    java.lang.Object invoke() -> invoke
+    juuxel.terrestrialvacation.config.Config invoke() -> keybindComponent
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.dimension.BiomeRiftDimension -> juuxel.terrestrialvacation.castle.Grate:
+    net.minecraft.world.dimension.DimensionType type -> p
+    net.minecraft.world.dimension.DimensionType TYPE -> q
+    juuxel.terrestrialvacation.dimension.BiomeRiftDimension$Companion Companion -> r
+    net.minecraft.world.dimension.DimensionType getType() -> getType
+    net.minecraft.world.gen.chunk.ChunkGenerator createChunkGenerator() -> createChunkGenerator
+    void <init>(net.minecraft.world.World,net.minecraft.world.dimension.DimensionType) -> <init>
+    void <clinit>() -> <clinit>
+    net.minecraft.world.dimension.DimensionType access$getTYPE$cp() -> minecraft
+juuxel.terrestrialvacation.dimension.BiomeRiftDimension$Companion -> juuxel.terrestrialvacation.castle.ReForgetEP:
+    net.minecraft.world.dimension.DimensionType getTYPE() -> a
+    void init() -> init
+    void <init>() -> <init>
+    void <init>(byte) -> <init>
+juuxel.terrestrialvacation.dimension.BiomeRiftDimension$Companion$TYPE$1 -> juuxel.terrestrialvacation.castle.Wander:
+    juuxel.terrestrialvacation.dimension.BiomeRiftDimension$Companion$TYPE$1 INSTANCE -> s
+    java.lang.Object invoke(java.lang.Object,java.lang.Object) -> invoke
+    kotlin.reflect.KDeclarationContainer getOwner() -> getOwner
+    java.lang.String getName() -> getName
+    java.lang.String getSignature() -> getSignature
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.dimension.BiomeRiftDimension$sam$java_util_function_BiFunction$0 -> juuxel.terrestrialvacation.castle.Inj2:
+    kotlin.jvm.functions.Function2 function -> t
+    void <init>(kotlin.jvm.functions.Function2) -> <init>
+    java.lang.Object apply(java.lang.Object,java.lang.Object) -> apply
+juuxel.terrestrialvacation.dimension.SpawnPlacer -> juuxel.terrestrialvacation.castle.Bang:
+    juuxel.terrestrialvacation.dimension.SpawnPlacer INSTANCE -> u
+    net.minecraft.block.pattern.BlockPattern$TeleportTarget placeEntity(net.minecraft.entity.Entity,net.minecraft.server.world.ServerWorld,net.minecraft.util.math.Direction,double,double) -> placeEntity
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.dimension.TopPlacer -> juuxel.terrestrialvacation.castle.ReCocartesian:
+    juuxel.terrestrialvacation.dimension.TopPlacer INSTANCE -> v
+    net.minecraft.block.pattern.BlockPattern$TeleportTarget placeEntity(net.minecraft.entity.Entity,net.minecraft.server.world.ServerWorld,net.minecraft.util.math.Direction,double,double) -> placeEntity
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.lib.Lib -> juuxel.terrestrialvacation.queen.Grate:
+    net.minecraft.block.Block BIOME_RIFT_PORTAL -> w
+    juuxel.terrestrialvacation.lib.Lib INSTANCE -> x
+    void init() -> init
+    java.lang.Object register(net.minecraft.util.registry.Registry,java.lang.String,java.lang.Object) -> tileState
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.mixin.OverworldBiomesMixin -> juuxel.terrestrialvacation.mixin.OverworldBiomesMixin:
+    void <init>() -> <init>
+    void onAddContinentalBiome(net.minecraft.world.biome.Biome,net.fabricmc.fabric.api.biomes.v1.OverworldClimate,double,org.spongepowered.asm.mixin.injection.callback.CallbackInfo) -> onAddContinentalBiome
+    void onAddBiomeVariant(net.minecraft.world.biome.Biome,net.minecraft.world.biome.Biome,double,net.fabricmc.fabric.api.biomes.v1.OverworldClimate[],org.spongepowered.asm.mixin.injection.callback.CallbackInfo) -> onAddBiomeVariant
+juuxel.terrestrialvacation.util.ExtensionsKt -> juuxel.terrestrialvacation.king.Grate:
+    net.minecraft.world.biome.layer.util.LayerFactory stack(net.minecraft.world.biome.layer.type.ParentedLayer,int,java.util.function.LongFunction,long,net.minecraft.world.biome.layer.util.LayerFactory) -> tileState

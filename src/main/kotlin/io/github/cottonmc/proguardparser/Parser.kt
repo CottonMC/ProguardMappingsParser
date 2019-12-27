@@ -13,6 +13,9 @@ fun parseProguardMappings(lines: List<String>): ProjectMapping {
 
         when {
             CLASS_LINE_PATTERN.matches(line) -> {
+                if (foundClass) {
+                    project = ProjectMapping.classes.modify(project) { it + currentClass }
+                }
                 foundClass = true
                 val classLine = CLASS_LINE_PATTERN.find(line) ?: throw IllegalStateException()
                 currentClass = ClassMapping(
@@ -21,7 +24,6 @@ fun parseProguardMappings(lines: List<String>): ProjectMapping {
                     emptyList(),
                     emptyList()
                 )
-                project = ProjectMapping.classes.modify(project) { it + currentClass }
             }
 
             !foundClass -> throw IllegalArgumentException("Invalid line (should be class start): '$line'")
@@ -52,6 +54,7 @@ fun parseProguardMappings(lines: List<String>): ProjectMapping {
             else -> throw IllegalArgumentException("Invalid line (should be a class or a member): '$line'")
         }
     }
+    project = ProjectMapping.classes.modify(project) { it + currentClass }
 
     return project
 }
