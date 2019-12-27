@@ -10,10 +10,16 @@ import arrow.optics.optics
     fun findPackage(oldName: String): String? =
         classes.find { it.from.substringBeforeLast('.') == oldName }?.to?.substringBeforeLast('.')
 
+    fun findClassesInPackage(oldName: String): List<ClassMapping> =
+        classes.filter { it.from.startsWith("$oldName.") }
+
     companion object
 }
 
 @optics data class ClassMapping(val from: String, val to: String, val fields: List<FieldMapping>, val methods: List<MethodMapping>) {
+    val fromSimpleName: String get() = from.substringAfterLast('.')
+    val toSimpleName: String get() = to.substringAfterLast('.')
+
     @JvmOverloads
     fun findMethod(oldName: String, returnType: String? = null, parameters: List<String>? = null): MethodMapping? =
         methods.find {
