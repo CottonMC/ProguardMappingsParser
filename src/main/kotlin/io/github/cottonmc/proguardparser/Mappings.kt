@@ -14,11 +14,13 @@ import arrow.optics.optics
 }
 
 @optics data class ClassMapping(val from: String, val to: String, val fields: List<FieldMapping>, val methods: List<MethodMapping>) {
-    fun findMethod(oldName: String, parameters: List<String>? = null): MethodMapping? =
+    @JvmOverloads
+    fun findMethod(oldName: String, returnType: String? = null, parameters: List<String>? = null): MethodMapping? =
         methods.find {
-            it.from == oldName && (parameters == null || it.parameters == parameters)
+            it.from == oldName && (returnType == null || it.returnType == returnType) && (parameters == null || it.parameters == parameters)
         }
 
+    @JvmOverloads
     fun findField(oldName: String, type: String? = null): FieldMapping? =
         fields.find {
             it.from == oldName && (type == null || it.type == type)
