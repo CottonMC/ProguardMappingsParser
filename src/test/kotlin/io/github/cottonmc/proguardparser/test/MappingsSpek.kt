@@ -46,7 +46,7 @@ object MappingsSpek : Spek({
             var method: MethodMapping? = null
             When("a method is searched") {
                 method = project.findClass("juuxel.terrestrialvacation.TerrestrialVacation")
-                    .findMethod("id", listOf("java.lang.String"))
+                    .findMethod("id", parameters = listOf("java.lang.String"))
             }
 
             Then("it should have found the correct method") {

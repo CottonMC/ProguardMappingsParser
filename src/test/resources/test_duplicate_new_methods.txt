@@ -1,0 +1,11 @@
+juuxel.terrestrialvacation.biome.AddBiomesLayer -> juuxel.terrestrialvacation.pawn.Grate:
+    juuxel.terrestrialvacation.biome.AddBiomesLayer INSTANCE -> level
+    int sample(net.minecraft.world.biome.layer.util.LayerRandomnessSource,int) -> sample
+    int dontSample(net.minecraft.world.biome.layer.util.LayerRandomnessSource,int) -> sample
+    void <init>() test_duplicate_old_classes.txt-> <init>
+    void <clinit>() -> <clinit>
+juuxel.terrestrialvacation.biome.AddBiomesLayer -> juuxel.terrestrialvacation.pawn.ReForgetEP:
+    juuxel.terrestrialvacation.biome.AddVariantsLayer INSTANCE -> menu
+    int sample(net.minecraft.world.biome.layer.util.LayerRandomnessSource,int) -> sample
+    void <init>() -> <init>
+    void <clinit>() -> <clinit>

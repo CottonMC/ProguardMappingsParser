@@ -11,6 +11,11 @@ version = "1.2.0"
 
 repositories {
     jcenter()
+    maven(url = "https://jitpack.io")
+    maven {
+        name = "Jitpack"
+        url = uri("https://jitpack.io")
+    }
 }
 
 if (rootProject.file("private.gradle").exists()) {
