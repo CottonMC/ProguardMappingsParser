@@ -7,15 +7,10 @@ plugins {
 }
 
 group = "io.github.cottonmc"
-version = "1.3.0"
+version = "1.4.0"
 
 repositories {
     jcenter()
-    maven(url = "https://jitpack.io")
-    maven {
-        name = "Jitpack"
-        url = uri("https://jitpack.io")
-    }
 }
 
 if (rootProject.file("private.gradle").exists()) {

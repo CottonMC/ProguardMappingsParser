@@ -36,6 +36,9 @@ private inline fun <T : Renameable> checkDuplicates(
     fun findClass(oldName: String): ClassMapping =
         classes.find { it.from == oldName } ?: throw NoSuchElementException("Unknown class: $oldName")
 
+    fun findClassOrNull(oldName: String): ClassMapping? =
+        classes.find { it.from == oldName }
+
     // This relies on classes existing in the old package.
     fun findPackage(oldName: String): String? =
         classes.find { it.from.substringBeforeLast('.') == oldName }?.to?.substringBeforeLast('.')
