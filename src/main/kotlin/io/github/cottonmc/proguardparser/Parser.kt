@@ -4,7 +4,10 @@ private val CLASS_LINE_PATTERN = Regex("(.+) -> (.+):")
 private val METHOD_LINE_PATTERN = Regex(" +(.+) (.+)\\((.*)\\) -> (.+)")
 private val FIELD_LINE_PATTERN = Regex(" +(.+) ([^(]+) -> (.+)")
 
-fun parseProguardMappings(lines: List<String>): ProjectMapping {
+fun parseProguardMappings(lines: List<String>): ProjectMapping =
+    parseProguardMappings(lines.asSequence())
+
+fun parseProguardMappings(lines: Sequence<String>): ProjectMapping {
     var project = ProjectMapping(emptyList())
     var foundClass = false
     lateinit var currentClass: ClassMapping
