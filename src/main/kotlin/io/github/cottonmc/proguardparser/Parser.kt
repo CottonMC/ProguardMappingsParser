@@ -82,6 +82,10 @@ fun parseProguardMappings(lines: Sequence<String>): ProjectMapping {
                     returnType = firstComponent
                 }
 
+                val originalClassName: String? =
+                    if ('.' in secondComponent) secondComponent.substringBeforeLast('.')
+                    else null
+
                 val originalName = secondComponent.substringAfterLast('.') // strip possible class name
                 val parameters = thirdComponent.split(',')
 
@@ -102,6 +106,7 @@ fun parseProguardMappings(lines: Sequence<String>): ProjectMapping {
                         from = originalName,
                         to = fifthComponent,
                         parameters = parameters,
+                        originalClass = originalClassName,
                         startLine = startLine,
                         endLine = endLine,
                         originalStartLine = originalStartLine,

@@ -127,6 +127,7 @@ private inline fun <T : Renameable> checkDuplicates(
  *
  * @property returnType the return type in original names
  * @property parameters the parameters in original names
+ * @property originalClass the original class of this method before merging
  * @property startLine the starting line in the bytecode
  * @property endLine the final line in the bytecode
  * @property originalStartLine the starting line before optimization
@@ -137,12 +138,16 @@ private inline fun <T : Renameable> checkDuplicates(
     override val from: String,
     override val to: String,
     val parameters: List<String>,
+    val originalClass: String? = null,
     val startLine: Int = MISSING_LINE,
     val endLine: Int = MISSING_LINE,
     val originalStartLine: Int = MISSING_LINE,
     val originalEndLine: Int = MISSING_LINE
 ): Renameable {
     companion object {
+        /**
+         * The constant used for line numbers when they are missing.
+         */
         const val MISSING_LINE: Int = -1
     }
 }
