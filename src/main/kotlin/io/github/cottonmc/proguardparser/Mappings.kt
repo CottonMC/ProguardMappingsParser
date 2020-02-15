@@ -6,8 +6,18 @@ import arrow.core.Right
 import arrow.core.extensions.fx
 import arrow.optics.optics
 
+/**
+ * A renameable object, such as a [class][ClassMapping], [method][MethodMapping] or a [field][FieldMapping].
+ */
 interface Renameable {
+    /**
+     * The name in the original namespace (usually unobfuscated).
+     */
     val from: String
+
+    /**
+     * The name in the target namespace (usually obfuscated).
+     */
     val to: String
 }
 
@@ -32,6 +42,11 @@ private inline fun <T : Renameable> checkDuplicates(
     return Right(ts)
 }
 
+/**
+ * A project mapping represents a single mapping file as a list of classes.
+ *
+ * @property classes the classes in this project
+ */
 @optics data class ProjectMapping(val classes: List<ClassMapping>) {
     fun findClass(oldName: String): ClassMapping =
         classes.find { it.from == oldName } ?: throw NoSuchElementException("Unknown class: $oldName")
@@ -54,13 +69,26 @@ private inline fun <T : Renameable> checkDuplicates(
     companion object
 }
 
+/**
+ * A class.
+ *
+ * @property fields the [fields][FieldMapping]
+ * @property methods the [methods][MethodMapping]
+ */
 @optics data class ClassMapping(
     override val from: String,
     override val to: String,
     val fields: List<FieldMapping>,
     val methods: List<MethodMapping>
 ) : Renameable {
+    /**
+     * The simple name of the class in the original namespace (usually unobfuscated).
+     */
     val fromSimpleName: String get() = from.substringAfterLast('.')
+
+    /**
+     * The simple name of the class in the target namespace (usually obfuscated).
+     */
     val toSimpleName: String get() = to.substringAfterLast('.')
 
     @JvmOverloads
@@ -85,15 +113,36 @@ private inline fun <T : Renameable> checkDuplicates(
     companion object
 }
 
+/**
+ * A field.
+ *
+ * @property type the field type in original names
+ */
 @optics data class FieldMapping(val type: String, override val from: String, override val to: String): Renameable {
     companion object
 }
 
+/**
+ * A method.
+ *
+ * @property returnType the return type in original names
+ * @property parameters the parameters in original names
+ * @property startLine the starting line in the bytecode
+ * @property endLine the final line in the bytecode
+ * @property originalStartLine the starting line before optimization
+ * @property originalEndLine the starting line before optimization
+ */
 @optics data class MethodMapping(
     val returnType: String,
     override val from: String,
     override val to: String,
-    val parameters: List<String>
+    val parameters: List<String>,
+    val startLine: Int = MISSING_LINE,
+    val endLine: Int = MISSING_LINE,
+    val originalStartLine: Int = MISSING_LINE,
+    val originalEndLine: Int = MISSING_LINE
 ): Renameable {
-    companion object
+    companion object {
+        const val MISSING_LINE: Int = -1
+    }
 }

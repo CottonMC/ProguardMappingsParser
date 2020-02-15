@@ -7,10 +7,14 @@ plugins {
 }
 
 group = "io.github.cottonmc"
-version = "1.5.0"
+version = "1.6.0"
 
 repositories {
     jcenter()
+    maven {
+        name = "Cotton"
+        url = uri("http://server.bbkr.space:8081/artifactory/libs-release")
+    }
 }
 
 if (rootProject.file("private.gradle").exists()) {
@@ -23,6 +27,7 @@ apply(from = rootProject.file("artifactory.gradle"))
 dependencies {
     api(kotlin("stdlib-jdk8"))
     api("io.arrow-kt:arrow-optics:0.10.4")
+    implementation("io.github.juuxel:leaf-through:1.3.0")
     testImplementation("io.arrow-kt:arrow-fx:0.10.4")
     kapt("io.arrow-kt:arrow-meta:0.10.4")
 
